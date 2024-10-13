@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>---</title>
+</head>
+<body>
+    <h4>Please enter password</h4>
+    <p>If you enter the wrong pin, this page will be closed.</p>
+    <input type="password" id="enter_pin">
+    <br>
+    <button onclick="go()">SUBMIT</button>
+    <br>
+    <button onclick="go_close()">CLOSE THE PAGE</button>
+</body>
+<script>
+    function go() {
+        var enter_password = enter_pin.value;
+        window.open(`https://japan-toushika.github.io/${enter_password}`);
+    }
+    function go_close() {
+        window.close();
+    }
+    var c = 11;
+    function close_count() {
+        c = c-1;
+        console.log(c)
+        if (c === 1) {
+            go_close();
+        }
+    }
+    setInterval(close_count,1000)
+    console.log('login')
+</script>
+</html>
